@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Vanessa ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: #E6C7C4;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .screen {
+            display: none;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin: -20px 0 30px 0;
+            color: #999;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 14px 32px;
+            font-size: 17px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 12px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #B39B94 0%, #A08B84 100%);
+            color: white;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #A08B84 0%, #90776B 100%);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, #ff4d6d 0%, #ff6b8a 100%);
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background: linear-gradient(135deg, #ff3a55 0%, #ff5a78 100%);
+        }
+
+        #noBtn {
+            background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+            color: #333;
+        }
+
+        #noBtn:hover {
+            background: linear-gradient(135deg, #d0d0d0 0%, #adadad 100%);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        .qr-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 35px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .qr-box {
+            text-align: center;
+        }
+
+        .qr-box p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 12px;
+        }
+
+        .qr-box a {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .spotify-btn {
+            background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+            color: white;
+        }
+
+        .spotify-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(29, 185, 84, 0.3);
+        }
+
+        .photos-btn {
+            background: #4285F4;
+            color: white;
+            border: none;
+        }
+
+        .photos-btn:hover {
+            transform: translateY(-3px);
+            background: #357AE8;
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.3);
+        }
+
+        .card-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(100% - 40px);
+                max-width: 500px;
+                padding: 40px 20px;
+                margin: 0 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 1rem;
+                margin: -15px 0 25px 0;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 12px 24px;
+                font-size: 16px;
+                margin: 8px;
+            }
+
+            .button-container {
+                gap: 10px;
+                margin-top: 25px;
+            }
+
+            .card-image {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 20px;
+            }
+
+            .qr-container {
+                gap: 20px;
+                margin-top: 25px;
+            }
+
+            .qr-box a {
+                padding: 11px 25px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .screen {
+                height: 100vh;
+                padding: 20px 0;
+            }
+
+            .card {
+                width: calc(100% - 30px);
+                max-width: 100%;
+                padding: 30px 15px;
+                margin: 0 15px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 0.95rem;
+                margin: -10px 0 20px 0;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            button {
+                padding: 11px 20px;
+                font-size: 15px;
+                margin: 6px;
+                min-width: 80px;
+            }
+
+            .button-container {
+                gap: 8px;
+                margin-top: 20px;
+            }
+
+            .card-image {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
+            }
+
+            .qr-container {
+                gap: 15px;
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .qr-box {
+                width: 100%;
+            }
+
+            .qr-box a {
+                width: 90%;
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+
+            .qr-box p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SCREEN 1 -->
+<div class="screen active" id="screen1">
+    <div class="card">
+        <img src="/j am so ve.jpg" alt="Vanessa" class="card-image">
+        <h1>Hello Vanessa ❤️</h1>
+        <h3>(my favourite man beater)</h3>
+        <button onclick="nextScreen(2)">Continue</button>
+    </div>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen" id="screen2">
+    <div class="card">
+        <img src="/Screenshot 2026-02-12 120148.png" alt="Question" class="card-image">
+        <h1>I want to ask you a very quick question...</h1>
+        <button onclick="nextScreen(3)">Okay 👀</button>
+    </div>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="screen" id="screen3">
+    <div class="card">
+        <img src="/Screenshot 2026-02-12 120313.png" alt="Valentine" class="card-image">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="button-container">
+            <button id="yesBtn" onclick="nextScreen(4)">YES</button>
+            <button id="noBtn">NO</button>
+        </div>
+    </div>
+</div>
+
+<!-- SCREEN 4 -->
+<div class="screen" id="screen4">
+    <div class="card">
+        <img src="/Screenshot 2026-02-12 120220.png" alt="Happy" class="card-image">
+        <h1>Tenks!</h1>
+        <h3>You always make me happy <br> my beautiful man beater❤️</h3>
+
+        <div class="qr-container">
+            <div class="qr-box">
+                <p>Listen to my love🎵</p>
+                <a href="https://open.spotify.com/playlist/3ITkrdHPEOb34EH7xE6aoE?si=e99e1705eb3a4667&pt=115b4a40b59bb34ffb57383848cf721e" target="_blank" class="spotify-btn">Open on Spotify</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function nextScreen(screenNumber) {
+        document.querySelectorAll(".screen").forEach(screen => {
+            screen.classList.remove("active");
+        });
+
+        document.getElementById("screen" + screenNumber).classList.add("active");
+    }
+
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    let noClickCount = 0;
+
+    noBtn.addEventListener("click", function() {
+        noClickCount++;
+
+        // Shrink NO button
+        noBtn.style.transform = `scale(${1 - noClickCount * 0.1})`;
+
+        // Grow YES button
+        yesBtn.style.transform = `scale(${1 + noClickCount * 0.1})`;
+    });
+
+
+</script>
+
+</body>
+</html>
